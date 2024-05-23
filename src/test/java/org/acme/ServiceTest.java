@@ -55,7 +55,7 @@ public class ServiceTest {
      /**
       * Completa la definicion y el mapping
       * de la clase Orden a la tabla t_ordenes
-      * El id de esta clase ha de seguir una estrategia Identity
+      * El id de esta clase ha de seguir una estrategia Identity para autocrearse
      */
 
 
