@@ -27,7 +27,7 @@ public class ServiceTest {
 
     /**
      * Completa la definicion y el mapping
-     * de la clase Item a la tabla t_items
+     * de la class Item a la tabla t_items
      */
     @Test
     public void test_mapping_normalItem() {
