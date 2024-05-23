@@ -38,7 +38,7 @@ public class ServiceTest {
         Assertions.assertThat(elixir.getTipo()).isEqualTo("NormalItem");
     }
 
-/**
+
  /**
  * Completa la definicion y el mapping
  * de la clase Usuaria a la tabla t_users
