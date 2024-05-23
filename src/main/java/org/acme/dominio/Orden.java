@@ -8,14 +8,16 @@ import jakarta.persistence.*;
 public class Orden extends PanacheEntityBase {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_orden")
-    private Long idOrden;
+    @Column(name = "ord_id")
+    private Long idOrden = 0L;
 
-    @Column(name = "ord_user")
-    private String ord_user;
+    @OneToOne
+    @JoinColumn(name="ord_user")
+    private Usuaria user = new Usuaria();
 
-    @Column(name = "ord_item")
-    private String ord_item;
+    @OneToOne
+    @JoinColumn(name="ord_item")
+    private Item item = new Item();
 
     public Orden() {
     }
@@ -28,19 +30,19 @@ public class Orden extends PanacheEntityBase {
         this.idOrden = idOrden;
     }
 
-    public String getOrd_user() {
-        return ord_user;
+    public Usuaria getUser() {
+        return user;
     }
 
-    public void setOrd_user(String ord_user) {
-        this.ord_user = ord_user;
+    public void setUser(Usuaria user) {
+        this.user = user;
     }
 
-    public String getOrd_item() {
-        return ord_item;
+    public Item getItem() {
+        return item;
     }
 
-    public void setOrd_item(String ord_item) {
-        this.ord_item = ord_item;
+    public void setItem(Item item) {
+        this.item = item;
     }
 }

@@ -12,27 +12,27 @@ public class Usuaria extends PanacheEntityBase {
 
     @Id
     @Column(name="user_nom")
-    private String user_nom;
+    private String nombre = "";
 
     @Column(name="user_prop")
-    private Integer user_prop;
+    private Integer destreza = 0;
 
     public Usuaria() {
     }
 
-    public String getUser_nom() {
-        return user_nom;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setUser_nom(String user_nom) {
-        this.user_nom = user_nom;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public Integer getUser_prop() {
-        return user_prop;
+    public Integer getDestreza() {
+        return destreza;
     }
 
-    public void setUser_prop(Integer user_prop) {
-        this.user_prop = user_prop;
+    public void setDestreza(Integer destreza) {
+        this.destreza = destreza;
     }
 }
