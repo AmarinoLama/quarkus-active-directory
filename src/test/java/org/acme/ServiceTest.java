@@ -1,12 +1,13 @@
 package org.acme;
 
 import io.quarkus.test.junit.QuarkusTest;
+import jakarta.inject.Inject;
 import jakarta.persistence.PersistenceContext;
 import org.acme.dominio.Item;
 import org.acme.dominio.Orden;
 import org.acme.dominio.Usuaria;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.assertj.core.api.Assertions;
 
 @QuarkusTest
 public class ServiceTest {
@@ -14,8 +15,8 @@ public class ServiceTest {
     @PersistenceContext
     jakarta.persistence.EntityManager em;
 
-//    @Inject
-//    ServiceOlli servicio;
+    @Inject
+    ServiceOlli servicio;
 
     /**
      * MAPPINGS de la entidades a las tablas de la BBDD.
@@ -73,7 +74,7 @@ public class ServiceTest {
      * Crea una clase llamada ServiceOlli e indica
      * que es una dependencia Quarkus
      */
-    /**
+
      @Test
      public void test_inyeccion_servicio() {
      Assertions.assertThat(servicio).isNotNull();
@@ -85,7 +86,7 @@ public class ServiceTest {
       * Si no existe, devuelve un objeto usuaria con sus propiedades
       * y valores como se indica en los casos test.
      */
-    /**
+
      @Test
      public void test_carga_usuaria() {
      Assertions.assertThat(servicio).isNotNull();
@@ -95,14 +96,14 @@ public class ServiceTest {
      Assertions.assertThat(elfo.getDestreza()).isEqualTo(15);
      }
 
-     @Test
+    /* @Test
      public void test_carga_usuaria_no_existe() {
      Assertions.assertThat(servicio).isNotNull();
      Usuaria profesor = servicio.cargaUsuaria("Severus");
      Assertions.assertThat(profesor).isNotNull();
      Assertions.assertThat(profesor.getNombre()).isEmpty();
      Assertions.assertThat(profesor.getDestreza()).isZero();
-     }
+     }*/
 
      /**
       * Implementa el metodo cargaItem del servicio.
