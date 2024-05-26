@@ -32,11 +32,15 @@ public class ServiceOlli {
 
     public Orden comanda(String nombreUsuaria, String nombreItem) {
 
+        Orden comanda = null;
+
         Optional<Usuaria> usuario = Usuaria.findByIdOptional(nombreUsuaria);
         Optional<Item> item = Item.findByIdOptional(nombreItem);
 
-        Orden comanda = new Orden(usuario.get(), item.get());
-        comanda.persist();
+        if (usuario.isPresent() && item.isPresent()) {
+            comanda = new Orden(usuario.get(), item.get());
+            comanda.persist();
+        }
         return comanda;
     }
 }
