@@ -217,7 +217,7 @@ public class ServiceTest {
       * para que NO permita generar pedidos de productos
       * si no existe el item en la base de datos.
      */
-    /**
+
      @Test
      public void test_comanda_no_item() {
      Assertions.assertThat(servicio).isNotNull();
