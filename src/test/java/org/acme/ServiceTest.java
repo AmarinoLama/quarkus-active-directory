@@ -239,7 +239,7 @@ public class ServiceTest {
       * que la calidad del Item.
      */
 
-    /**
+
      @Test
      public void test_comanda_item_sin_pro() {
      Assertions.assertThat(servicio).isNotNull();
