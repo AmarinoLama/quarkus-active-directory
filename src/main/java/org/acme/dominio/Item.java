@@ -28,6 +28,10 @@ public class Item extends PanacheEntityBase {
         this.tipo = tipo;
     }
 
+    public Item(String nombre) {
+        this.nombre = nombre;
+    }
+
     public Item () {}
 
     public String getNombre() {

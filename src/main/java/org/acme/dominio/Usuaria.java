@@ -20,6 +20,10 @@ public class Usuaria extends PanacheEntityBase {
     public Usuaria() {
     }
 
+    public Usuaria(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getNombre() {
         return nombre;
     }

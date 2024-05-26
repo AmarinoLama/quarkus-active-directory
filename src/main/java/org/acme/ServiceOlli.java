@@ -5,7 +5,6 @@ import org.acme.dominio.Item;
 import org.acme.dominio.Orden;
 import org.acme.dominio.Usuaria;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,5 +28,15 @@ public class ServiceOlli {
         return ordenes.stream()
                 .filter(orden -> orden.getUser().getNombre().equals(nameUsuaria))
                 .toList();
+    }
+
+    public Orden comanda(String nombreUsuaria, String nombreItem) {
+
+        Optional<Usuaria> usuario = Usuaria.findByIdOptional(nombreUsuaria);
+        Optional<Item> item = Item.findByIdOptional(nombreItem);
+
+        Orden comanda = new Orden(usuario.get(), item.get());
+        comanda.persist();
+        return comanda;
     }
 }
