@@ -3,11 +3,15 @@ package org.acme;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
 import org.acme.dominio.Item;
 import org.acme.dominio.Orden;
 import org.acme.dominio.Usuaria;
 import org.junit.jupiter.api.Test;
 import org.assertj.core.api.Assertions;
+
+import java.util.List;
 
 @QuarkusTest
 public class ServiceTest {
@@ -136,7 +140,7 @@ public class ServiceTest {
       * con el nombre indicado, si existe.
       * Si no existe, devuelve una lista vacía.
      */
-    /**
+
      @Test
      public void test_carga_orden() {
      Assertions.assertThat(servicio).isNotNull();
@@ -166,7 +170,7 @@ public class ServiceTest {
       *
       * El metodo devuelve la orden de tipo Orden creada.
      */
-    /**
+
      @Test
      @Transactional
      public void test_comanda_ok() {
