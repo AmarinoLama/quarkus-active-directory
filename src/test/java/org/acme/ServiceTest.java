@@ -96,14 +96,14 @@ public class ServiceTest {
      Assertions.assertThat(elfo.getDestreza()).isEqualTo(15);
      }
 
-    /* @Test
+     @Test
      public void test_carga_usuaria_no_existe() {
      Assertions.assertThat(servicio).isNotNull();
      Usuaria profesor = servicio.cargaUsuaria("Severus");
      Assertions.assertThat(profesor).isNotNull();
      Assertions.assertThat(profesor.getNombre()).isEmpty();
      Assertions.assertThat(profesor.getDestreza()).isZero();
-     }*/
+     }
 
      /**
       * Implementa el metodo cargaItem del servicio.
@@ -111,7 +111,7 @@ public class ServiceTest {
       * Si no existe, devuelve un objeto Item con sus propiedades
       * y valores como se indica en los casos test.
      */
-    /**
+
      @Test
      public void test_carga_item() {
      Assertions.assertThat(servicio).isNotNull();
