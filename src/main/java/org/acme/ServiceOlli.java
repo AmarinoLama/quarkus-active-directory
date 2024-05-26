@@ -5,6 +5,7 @@ import org.acme.dominio.Item;
 import org.acme.dominio.Orden;
 import org.acme.dominio.Usuaria;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,5 +43,21 @@ public class ServiceOlli {
             comanda.persist();
         }
         return comanda;
+    }
+
+    public List<Orden> comandaMultiple(String nombreUsuaria, List<String> listaNombreItems) {
+        Optional<Usuaria> usuario = Usuaria.findByIdOptional(nombreUsuaria);
+        List<Orden> listOrdens = new ArrayList<>();
+        if (usuario.isPresent()) {
+            for (String nombreItem : listaNombreItems) {
+                Optional<Item> item = Item.findByIdOptional(nombreItem);
+                if (item.isPresent()) {
+                    Orden comanda = new Orden(usuario.get(), item.get());
+                    comanda.persist();
+                    listOrdens.add(comanda);
+                }
+            }
+        }
+        return listOrdens;
     }
 }

@@ -11,6 +11,7 @@ import org.acme.dominio.Usuaria;
 import org.junit.jupiter.api.Test;
 import org.assertj.core.api.Assertions;
 
+import java.util.Arrays;
 import java.util.List;
 
 @QuarkusTest
@@ -262,7 +263,7 @@ public class ServiceTest {
       *
       * No se ordenan items que no existan en la base de datos.
      */
-/**
+
  @Test
  @Transactional
  public void test_ordenar_multiples_items_ok() {
@@ -283,7 +284,7 @@ public class ServiceTest {
  em.find(Orden.class, pedidos.get(1).getId()).delete();
  em.find(Orden.class, pedidos.get(0).getId()).delete();
  }
-  *
+
  // No se permiten ordenes si el usuario no existe en la base de datos
  @Test
  @Transactional
@@ -301,5 +302,5 @@ public class ServiceTest {
  List<Orden> ordenes = servicio.comandaMultiple("Hermione", Arrays.asList("Guardapelo Salazar", "Reliquias de la Muerte"));
  Assertions.assertThat(ordenes).isEmpty();
  }
- **/
+
 }
